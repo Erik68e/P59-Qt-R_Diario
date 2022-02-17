@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Recursos/boton-cerrar.png</file>
+        <file>Recursos/maximizar.png</file>
+        <file>Recursos/menu.png</file>
+        <file>Recursos/minimizar.png</file>
+        <file>Recursos/agenda.png</file>
+        <file>Recursos/calendario.png</file>
+        <file>Recursos/calendario-diario.png</file>
+        <file>Recursos/tablero.png</file>
+        <file>Recursos/informacion-personal.png</file>
+        <file>Recursos/agregar-archivo.png</file>
+    </qresource>
+</RCC>
