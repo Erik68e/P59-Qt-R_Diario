@@ -12,5 +12,6 @@
         <file>Recursos/agregar-archivo.png</file>
         <file>Recursos/guardar.png</file>
         <file>Recursos/calendarioaaa.png</file>
+        <file>diario_en.qm</file>
     </qresource>
 </RCC>

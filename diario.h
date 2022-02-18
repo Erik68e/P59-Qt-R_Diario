@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include <agenda.h>
+#include <horario.h>
 #include <informacion.h>
 #include <calendario.h>
+#include <QList>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class diario; }
@@ -18,13 +20,13 @@ public:
     diario(QWidget *parent = nullptr);
     ~diario();
 
-    void informacion(QString titulo, QString fecha, QString nota);
+    void informacion(QString titulo, QString fecha, QString nota, QString prioridad);
 
     QString currentDateTime();
     QString notaAgregada();
     void guardar();
     void limpiar();
-
+    QList<QString> List;
 
 private slots:
     void on_salir_clicked();
@@ -44,8 +46,6 @@ private slots:
     void on_bt_Informacion_clicked();
 
     void on_btn_agregarGuardar_clicked();
-
-    void on_bt_guardar_clicked();
 
     void on_bt_cerrarAgregado_clicked();
 

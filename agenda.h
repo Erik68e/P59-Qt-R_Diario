@@ -6,6 +6,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QDebug>
+#include <QList>
 
 #include <diario.h>
 
@@ -23,6 +24,8 @@ public:
 
     void obtenerinformacion(QString titulo, QString fecha, QString prioridad, QString nota);
     QString infoAgenda();
+    void guardar();
+    void info();
 
     int getCon() const;
     void setCon(int newCon);
@@ -38,11 +41,14 @@ public:
 private slots:
     void on_historial_clicked();
 
+    void on_bt_guardar_clicked();
+
 private:
     Ui::Agenda *ui;
 
     int con = 0;
     QString m_titulo;
+    QString nombre;
     QString m_fecha;
     QString m_prioridad;
     QString m_nota;

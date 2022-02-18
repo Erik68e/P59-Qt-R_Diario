@@ -11,21 +11,26 @@ CONFIG += c++11
 SOURCES += \
     agenda.cpp \
     calendario.cpp \
+    horario.cpp \
     informacion.cpp \
     main.cpp \
-    diario.cpp
+    diario.cpp \
 
 HEADERS += \
     agenda.h \
     calendario.h \
     diario.h \
-    informacion.h
+    horario.h \
+    informacion.h \
 
 FORMS += \
     agenda.ui \
     calendario.ui \
     diario.ui \
-    informacion.ui
+    horario.ui \
+    informacion.ui \
+
+TRANSLATIONS = diario_en.ts\
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

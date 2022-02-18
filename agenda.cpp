@@ -86,6 +86,69 @@ QString Agenda::infoAgenda()
 
 void Agenda::on_historial_clicked()
 {
+    // Abrir cuadro de dialogo para seleccionar ubicacion y nombre del archivo
+    QString nombreArchivo = QFileDialog::getSaveFileName(this,
+                                                         "Guardar datos",
+                                                         QString(),
+                                                         "Archivo de salarios (*.slr)");
+    qDebug() << nombreArchivo;
+    // Crear un objeto QFile
+    QFile archivo(nombreArchivo);
+    // Abrir para LECTURA
+    if (archivo.open (QFile::ReadOnly)){
+        // Crear un flujo de texto
+        QTextStream entrada (&archivo);
+        // Leer todo el contenido del archivo
+        QString datos = " " , hasta = " " ;
+        while (entrada. atEnd () == false && hasta != "->") {
+            hasta = entrada.readLine();
+            datos += hasta + " \n " ;
+        }
+        // Cargar todo el contenido a la zona del texto
+        ui-> outAgenda -> clear();
+        ui-> outAgenda -> setPlainText (datos);
+    }
+    //Cerrar archivo
+    archivo.close();
+}
+
+void  Agenda::guardar()
+{
+    // Abrir cuadro de dialogo para seleccionar ubicacion y nombre del archivo
+    QString nombreArchivo = QFileDialog::getSaveFileName(this,
+                                                         "Guardar datos",
+                                                         QString(),
+                                                         "Archivo de salarios (*.slr)");
+    qDebug() << nombreArchivo;
+    // Crear un objeto QFile
+    QFile archivo(nombreArchivo);
+
+    // Abrir para escritura
+    if(archivo.open(QFile::WriteOnly | QFile::Text)){
+        // Crear un stream de texto
+        QTextStream salida(&archivo);
+        // Enviar los datos del resultado a la salida
+        salida << " \t     - - Registro - - \n";
+        salida << "___________________________________________________" << endl;
+        salida << infoAgenda();
+        salida << "\n->" << endl;
+    }else{
+        // Mensaje de error si no se puede abrir el archivo
+        QMessageBox::warning(this,
+                             "Guardar datos",
+                             "No se pudo guardar los datos");
+    }
+    //Cerrar archivo
+    archivo.close();
+}
+
+void Agenda::info()
+{
     ui->outAgenda->appendPlainText(infoAgenda());
+}
+
+void Agenda::on_bt_guardar_clicked()
+{
+    guardar();
 }
 

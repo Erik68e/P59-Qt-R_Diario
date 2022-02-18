@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>735</width>
-    <height>619</height>
+    <height>621</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -426,6 +426,9 @@ background-color:#bcffc6;
              <item row="0" column="0">
               <widget class="QWidget" name="widget_3" native="true">
                <layout class="QGridLayout" name="gridLayout_4">
+                <item row="1" column="0">
+                 <widget class="QListWidget" name="outReporte"/>
+                </item>
                 <item row="0" column="0">
                  <widget class="QLabel" name="label">
                   <property name="font">
@@ -435,7 +438,7 @@ background-color:#bcffc6;
                    </font>
                   </property>
                   <property name="text">
-                   <string>                                            -    -   REPORTE   -    -    </string>
+                   <string>                                            -    -   RESUMEN   -    -    </string>
                   </property>
                  </widget>
                 </item>
@@ -484,22 +487,6 @@ background-color:#bcffc6;
                   </layout>
                  </widget>
                 </item>
-                <item row="1" column="0">
-                 <widget class="QPlainTextEdit" name="outReporte">
-                  <property name="documentTitle">
-                   <string/>
-                  </property>
-                  <property name="readOnly">
-                   <bool>true</bool>
-                  </property>
-                  <property name="plainText">
-                   <string/>
-                  </property>
-                  <property name="placeholderText">
-                   <string notr="true">No hay eventos proximos   -&gt; Disfruta tu semana</string>
-                  </property>
-                 </widget>
-                </item>
                 <item row="3" column="0">
                  <widget class="QWidget" name="widget_5" native="true">
                   <property name="styleSheet">
@@ -515,36 +502,6 @@ background-color:#bcffc6;
                       </sizepolicy>
                      </property>
                      <layout class="QGridLayout" name="gridLayout_2">
-                      <item row="0" column="3">
-                       <widget class="QPushButton" name="btn_agregarGuardar">
-                        <property name="styleSheet">
-                         <string notr="true">QPushButton{
-border:Opx;
-}
-
-QPushButton:hover{
-border:Sox sold #aa00ff;
-background-color:#6294ff;
-}
-
-
-</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="icon">
-                         <iconset resource="Recursos.qrc">
-                          <normaloff>:/Recursos/agregar-archivo.png</normaloff>:/Recursos/agregar-archivo.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                         <size>
-                          <width>50</width>
-                          <height>50</height>
-                         </size>
-                        </property>
-                       </widget>
-                      </item>
                       <item row="0" column="0">
                        <widget class="QPushButton" name="bt_cerrarAgregado">
                         <property name="minimumSize">
@@ -578,14 +535,8 @@ background-color:#ff5050;
                         </property>
                        </widget>
                       </item>
-                      <item row="0" column="1">
-                       <widget class="QPushButton" name="bt_guardar">
-                        <property name="minimumSize">
-                         <size>
-                          <width>35</width>
-                          <height>35</height>
-                         </size>
-                        </property>
+                      <item row="0" column="2">
+                       <widget class="QPushButton" name="btn_agregarGuardar">
                         <property name="styleSheet">
                          <string notr="true">QPushButton{
 border:Opx;
@@ -593,20 +544,23 @@ border:Opx;
 
 QPushButton:hover{
 border:Sox sold #aa00ff;
-background-color:#37ff00;
-}</string>
+background-color:#6294ff;
+}
+
+
+</string>
                         </property>
                         <property name="text">
                          <string/>
                         </property>
                         <property name="icon">
                          <iconset resource="Recursos.qrc">
-                          <normaloff>:/Recursos/guardar.png</normaloff>:/Recursos/guardar.png</iconset>
+                          <normaloff>:/Recursos/agregar-archivo.png</normaloff>:/Recursos/agregar-archivo.png</iconset>
                         </property>
                         <property name="iconSize">
                          <size>
-                          <width>30</width>
-                          <height>30</height>
+                          <width>50</width>
+                          <height>50</height>
                          </size>
                         </property>
                        </widget>

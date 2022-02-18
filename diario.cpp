@@ -16,11 +16,12 @@ diario::~diario()
     delete ui;
 }
 
-void diario::informacion(QString titulo, QString fecha, QString nota)
+void diario::informacion(QString titulo, QString fecha, QString nota, QString prioridad)
 {
-    this -> m_titulo = titulo;
-    this -> m_fecha = fecha;
-    this -> m_nota = nota;
+    titulo = ui->outTitulo->text();
+    fecha = ui->outFecha_2->text();
+    nota = ui->outNota->text();
+    prioridad = ui->outPrioridad->text();
 }
 
 void diario::on_salir_clicked()
@@ -40,36 +41,7 @@ void diario::on_minimizar_clicked()
 
 void diario::on_bt_Resumen_clicked()
 {
-    // Abrir cuadro de dialogo para seleccionar ubicacion y nombre del archivo
-    QString nombreArchivo = QFileDialog::getSaveFileName(this,
-                                                         "Guardar datos",
-                                                         QString(),
-                                                         "Archivo de salarios (*.slr)");
-    qDebug() << nombreArchivo;
-    // Crear un objeto QFile
-    QFile archivo(nombreArchivo);
-    // Abrir para LECTURA
-    if (archivo.open (QFile::ReadOnly)){
-        // Crear un flujo de texto
-        QTextStream entrada (&archivo);
-        // Leer todo el contenido del archivo
-        QString datos = " " , hasta = " " ;
-        while (entrada. atEnd () == false && hasta != "->") {
-            hasta = entrada.readLine();
-            datos += hasta + " \n " ;
-        }
-        // Cargar todo el contenido a la zona del texto
-        ui-> outReporte -> clear();
-        ui-> outReporte -> setPlainText (datos);
-        // Mostrar 5 segundos que todo fue bien
-        ui-> statusbar -> showMessage( tr(" Datos almacenados en ") + nombreArchivo, 5000 );
-        // Mensaje de error si no se puede abrir el archivo
-        QMessageBox::warning(this,
-                             tr("Abrir datos"),
-                             tr("No se pudo abrir el archivo"));
-    }
-    //Cerrar archivo
-    archivo.close();
+
 }
 
 void diario::on_bt_Agenda_clicked()
@@ -84,6 +56,7 @@ void diario::on_bt_Agenda_clicked()
                                 ui->outFecha_2->text(),
                                 ui->outNota->text(),
                                 ui->outPrioridad->text());
+    dialogo->info();
     dialogo->exec();
 }
 
@@ -97,9 +70,9 @@ void diario::on_bt_Calendario_clicked()
 
 void diario::on_bt_Horario_clicked()
 {
-
+    Horario *hora = new Horario(this);
+    hora->exec();
 }
-
 
 void diario::on_bt_Informacion_clicked()
 {
@@ -117,11 +90,13 @@ void diario::on_btn_agregarGuardar_clicked()
     m_prioridad = ui->outPrioridad->text();
     ui->contador->setText(QString::number(con));
 
+    ui->outReporte->addItem(QString::number(con) + " | " + m_titulo + " | "+ m_fecha + " | " + m_nota + " | " + m_prioridad);
+
+
     if(m_titulo == "" || m_fecha == "" || m_nota == "" || m_prioridad == ""){
         QMessageBox::warning(this,"Advertencia", "No hay informacion para agregar");
         return;
     }
-    ui->outReporte->appendPlainText(notaAgregada());
     //limpiar();
 }
 
@@ -153,47 +128,12 @@ QString diario::notaAgregada()
     return notaAg;
 }
 
-void  diario::guardar()
-{
-    // Abrir cuadro de dialogo para seleccionar ubicacion y nombre del archivo
-    QString nombreArchivo = QFileDialog::getSaveFileName(this,
-                                                         "Guardar datos",
-                                                         QString(),
-                                                         "Archivo de salarios (*.slr)");
-    qDebug() << nombreArchivo;
-    // Crear un objeto QFile
-    QFile archivo(nombreArchivo);
-
-    // Abrir para escritura
-    if(archivo.open(QFile::WriteOnly | QFile::Truncate)){
-        // Crear un stream de texto
-        QTextStream salida(&archivo);
-        // Enviar los datos del resultado a la salida
-        salida << " \t     - - Registro - - \n";
-        salida << "___________________________________________________" << endl;
-        salida << ui->outReporte->toPlainText ();
-        salida << "\n->" << endl;
-    }else{
-        // Mensaje de error si no se puede abrir el archivo
-        QMessageBox::warning(this,
-                             "Guardar datos",
-                             "No se pudo guardar los datos");
-    }
-    //Cerrar archivo
-    archivo.close();
-}
-
 void diario::limpiar()
 {
     ui->outTitulo->setText("");
     ui->outFecha_2->setText("");
     ui->outNota->setText("");
     ui->outPrioridad->setText("");
-}
-
-void diario::on_bt_guardar_clicked()
-{
-    guardar();
 }
 
 
