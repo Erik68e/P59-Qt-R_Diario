@@ -2,7 +2,9 @@
 #define DIARIO_H
 
 #include <QMainWindow>
-#include <agregar.h>
+#include <agenda.h>
+#include <informacion.h>
+#include <calendario.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class diario; }
@@ -16,7 +18,13 @@ public:
     diario(QWidget *parent = nullptr);
     ~diario();
 
+    void informacion(QString titulo, QString fecha, QString nota);
+
     QString currentDateTime();
+    QString notaAgregada();
+    void guardar();
+    void limpiar();
+
 
 private slots:
     void on_salir_clicked();
@@ -35,9 +43,19 @@ private slots:
 
     void on_bt_Informacion_clicked();
 
-    void on_btn_agregar_clicked();
+    void on_btn_agregarGuardar_clicked();
+
+    void on_bt_guardar_clicked();
+
+    void on_bt_cerrarAgregado_clicked();
 
 private:
     Ui::diario *ui;
+
+    int con = 0;
+    QString m_titulo;
+    QString m_fecha;
+    QString m_prioridad;
+    QString m_nota;
 };
 #endif // DIARIO_H

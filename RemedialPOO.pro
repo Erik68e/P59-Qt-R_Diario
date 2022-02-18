@@ -9,17 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    agregar.cpp \
+    agenda.cpp \
+    calendario.cpp \
+    informacion.cpp \
     main.cpp \
     diario.cpp
 
 HEADERS += \
-    agregar.h \
-    diario.h
+    agenda.h \
+    calendario.h \
+    diario.h \
+    informacion.h
 
 FORMS += \
-    agregar.ui \
-    diario.ui
+    agenda.ui \
+    calendario.ui \
+    diario.ui \
+    informacion.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

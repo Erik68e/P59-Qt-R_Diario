@@ -10,5 +10,7 @@
         <file>Recursos/tablero.png</file>
         <file>Recursos/informacion-personal.png</file>
         <file>Recursos/agregar-archivo.png</file>
+        <file>Recursos/guardar.png</file>
+        <file>Recursos/calendarioaaa.png</file>
     </qresource>
 </RCC>

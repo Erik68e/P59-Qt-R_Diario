@@ -6,18 +6,22 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>804</width>
-    <height>565</height>
+    <width>735</width>
+    <height>619</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>diario</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Recursos.qrc">
+    <normaloff>:/Recursos/calendarioaaa.png</normaloff>:/Recursos/calendarioaaa.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QGridLayout" name="gridLayout_2">
+   <layout class="QGridLayout" name="gridLayout_9">
     <item row="0" column="0">
      <widget class="QWidget" name="ventana" native="true">
       <property name="styleSheet">
@@ -422,24 +426,6 @@ background-color:#bcffc6;
              <item row="0" column="0">
               <widget class="QWidget" name="widget_3" native="true">
                <layout class="QGridLayout" name="gridLayout_4">
-                <item row="1" column="0">
-                 <widget class="QPlainTextEdit" name="plainTextEdit">
-                  <property name="documentTitle">
-                   <string/>
-                  </property>
-                  <property name="readOnly">
-                   <bool>true</bool>
-                  </property>
-                  <property name="plainText">
-                   <string>No hay eventos proximos
-
- -&gt; Disfruta tu semana</string>
-                  </property>
-                  <property name="placeholderText">
-                   <string notr="true"/>
-                  </property>
-                 </widget>
-                </item>
                 <item row="0" column="0">
                  <widget class="QLabel" name="label">
                   <property name="font">
@@ -453,79 +439,279 @@ background-color:#bcffc6;
                   </property>
                  </widget>
                 </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QWidget" name="widget_4" native="true">
-               <layout class="QGridLayout" name="gridLayout_6">
-                <item row="0" column="3">
-                 <widget class="QPushButton" name="btn_agregar">
+                <item row="2" column="0">
+                 <widget class="QWidget" name="widget_4" native="true">
+                  <layout class="QGridLayout" name="gridLayout_6">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_2">
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Fecha: </string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLabel" name="outFecha">
+                     <property name="font">
+                      <font>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Hora actual</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="2">
+                    <spacer name="horizontalSpacer_2">
+                     <property name="orientation">
+                      <enum>Qt::Horizontal</enum>
+                     </property>
+                     <property name="sizeHint" stdset="0">
+                      <size>
+                       <width>40</width>
+                       <height>20</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QPlainTextEdit" name="outReporte">
+                  <property name="documentTitle">
+                   <string/>
+                  </property>
+                  <property name="readOnly">
+                   <bool>true</bool>
+                  </property>
+                  <property name="plainText">
+                   <string/>
+                  </property>
+                  <property name="placeholderText">
+                   <string notr="true">No hay eventos proximos   -&gt; Disfruta tu semana</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <widget class="QWidget" name="widget_5" native="true">
                   <property name="styleSheet">
-                   <string notr="true">QPushButton{
+                   <string notr="true">background-color: rgb(162, 202, 255);</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_7">
+                   <item row="0" column="0">
+                    <widget class="QWidget" name="widget_7" native="true">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <layout class="QGridLayout" name="gridLayout_2">
+                      <item row="0" column="3">
+                       <widget class="QPushButton" name="btn_agregarGuardar">
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
 border:Opx;
 }
 
 QPushButton:hover{
 border:Sox sold #aa00ff;
-background-color:#b2d5ff;
+background-color:#6294ff;
 }
 
 
 </string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="Recursos.qrc">
-                    <normaloff>:/Recursos/agregar-archivo.png</normaloff>:/Recursos/agregar-archivo.png</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>50</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="2">
-                 <spacer name="horizontalSpacer_2">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QLabel" name="outFecha">
-                  <property name="font">
-                   <font>
-                    <weight>75</weight>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Hora actual</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label_2">
-                  <property name="font">
-                   <font>
-                    <weight>75</weight>
-                    <bold>true</bold>
-                   </font>
-                  </property>
-                  <property name="text">
-                   <string>Fecha: </string>
-                  </property>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="Recursos.qrc">
+                          <normaloff>:/Recursos/agregar-archivo.png</normaloff>:/Recursos/agregar-archivo.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="0">
+                       <widget class="QPushButton" name="bt_cerrarAgregado">
+                        <property name="minimumSize">
+                         <size>
+                          <width>35</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
+border:Opx;
+}
+
+QPushButton:hover{
+border:Sox sold #aa00ff;
+background-color:#ff5050;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="Recursos.qrc">
+                          <normaloff>:/Recursos/boton-cerrar.png</normaloff>:/Recursos/boton-cerrar.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="0" column="1">
+                       <widget class="QPushButton" name="bt_guardar">
+                        <property name="minimumSize">
+                         <size>
+                          <width>35</width>
+                          <height>35</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
+border:Opx;
+}
+
+QPushButton:hover{
+border:Sox sold #aa00ff;
+background-color:#37ff00;
+}</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="Recursos.qrc">
+                          <normaloff>:/Recursos/guardar.png</normaloff>:/Recursos/guardar.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>30</width>
+                          <height>30</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QWidget" name="widget_6" native="true">
+                     <layout class="QGridLayout" name="gridLayout_8">
+                      <item row="2" column="2">
+                       <widget class="QLineEdit" name="outFecha_2">
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(187, 222, 255);</string>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Agregar Fecha</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="0">
+                       <widget class="QLabel" name="contador">
+                        <property name="text">
+                         <string>       0</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="2" column="0">
+                       <widget class="QLabel" name="label_3">
+                        <property name="minimumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>40</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="Recursos.qrc">:/Recursos/calendario-diario.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="1" column="2">
+                       <widget class="QLineEdit" name="outTitulo">
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(187, 222, 255);</string>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Añadir un titulo</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="2">
+                       <widget class="QLineEdit" name="outNota">
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(187, 222, 255);</string>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Añadir una nota</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="4" column="0">
+                       <widget class="QLabel" name="label_4">
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="pixmap">
+                         <pixmap resource="Recursos.qrc">:/Recursos/agregar-archivo.png</pixmap>
+                        </property>
+                        <property name="scaledContents">
+                         <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                      <item row="3" column="2">
+                       <widget class="QLineEdit" name="outPrioridad">
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(187, 222, 255);</string>
+                        </property>
+                        <property name="placeholderText">
+                         <string>Prioridad: Alta, Media o Baja</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -713,7 +899,7 @@ background-color:#ff5050;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>804</width>
+     <width>735</width>
      <height>26</height>
     </rect>
    </property>

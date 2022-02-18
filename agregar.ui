@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>360</width>
-    <height>379</height>
+    <width>434</width>
+    <height>417</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,86 @@
       <string notr="true">background-color: rgb(162, 202, 255);</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_3">
+      <item row="1" column="0">
+       <widget class="QWidget" name="widget_3" native="true">
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="Recursos.qrc">:/Recursos/calendario-diario.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="outNota">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(187, 222, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Añadir una nota</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap resource="Recursos.qrc">:/Recursos/agregar-archivo.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0" colspan="2">
+          <widget class="QLineEdit" name="outTitulo">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(187, 222, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Añadir un titulo</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="outFecha">
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(187, 222, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Agregar Fecha</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QWidget" name="widget_2" native="true">
         <property name="sizePolicy">
@@ -111,84 +191,17 @@ background-color:#b2d5ff;
         </layout>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QWidget" name="widget_3" native="true">
-        <layout class="QGridLayout" name="gridLayout_4">
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_2">
-           <property name="minimumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>40</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="Recursos.qrc">:/Recursos/calendario-diario.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit_3">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(187, 222, 255);</string>
-           </property>
-           <property name="placeholderText">
-            <string>Añadir una nota</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_3">
-           <property name="maximumSize">
-            <size>
-             <width>50</width>
-             <height>50</height>
-            </size>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="Recursos.qrc">:/Recursos/agregar-archivo.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0" colspan="2">
-          <widget class="QLineEdit" name="lineEdit">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(187, 222, 255);</string>
-           </property>
-           <property name="placeholderText">
-            <string>Añadir un titulo</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_2">
-           <property name="styleSheet">
-            <string notr="true">background-color: rgb(187, 222, 255);</string>
-           </property>
-           <property name="placeholderText">
-            <string>Agregar Fecha</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
+      <item row="2" column="0">
+       <widget class="QPlainTextEdit" name="outEnviardatos">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="plainText">
+         <string>     	         -  - Nota Agregada - -</string>
+        </property>
+        <property name="placeholderText">
+         <string>Datos Ingresados</string>
+        </property>
        </widget>
       </item>
      </layout>

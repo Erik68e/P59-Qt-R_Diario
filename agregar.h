@@ -27,16 +27,10 @@ public:
     explicit Agregar(QWidget *parent = nullptr);
     ~Agregar();
 
-    void informacion(QString titulo, QString fecha, QString nota);
+    QString currentDateTime();
+
+    QString notaAgregada();
     void guardar();
-
-
-    const QString &titulo() const;
-    void setTitulo(const QString &newTitulo);
-    const QString &fecha() const;
-    void setFecha(const QString &newFecha);
-    const QString &nota() const;
-    void setNota(const QString &newNota);
 
 private slots:
     void on_btn_agregarGuardar_clicked();
